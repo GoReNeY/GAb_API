@@ -3,15 +3,18 @@ from pydantic import BaseModel, AnyUrl, Field
 
 class Game(BaseModel):
 
-    name: str
+    id: int
+
+    price: str = Field(alias="worth")
+
+    title: str
     description: str
-    publisher: str
 
-    discount_price: int = Field(alias='discountPrice')
-    original_price: int = Field(alias='originalPrice')
-    currency_code: str = Field(alias='currencyCode')
+    image: str
 
-    offer_image_wide: AnyUrl = Field(alias='offerImageWide')
-    offer_image_tall: AnyUrl = Field(alias='offerImageTall')
+    published_date: str
+    end_date: str
 
-    app_url: AnyUrl = Field(alias="appUrl")
+    platforms: str
+
+    open_giveaway: AnyUrl
