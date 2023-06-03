@@ -1,7 +1,7 @@
 import json
 
 from fastapi import APIRouter, Request, Body
-from typing import Dict, Annotated
+from typing import Dict, Annotated, Any
 
 from app.utils.database import Database
 from app.settings import settings
@@ -11,7 +11,7 @@ database_router = APIRouter(prefix="/database", tags=["DATABASE"])
 
 
 @database_router.get("/platforms")
-async def get_user_platforms(user_id: int, request: Request) -> Dict:
+async def get_user_platforms(user_id: int, request: Request) -> Any:
 
     if not request.headers.get("Autorization") == settings.BOT_TOKEN.get_secret_value():
         return {"Access Denied": "Token is missing or incorrect"}

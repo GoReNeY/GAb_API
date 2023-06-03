@@ -17,4 +17,5 @@ class Game(BaseModel):
 
     platforms: str
 
+    gamerpower_url: AnyUrl
     open_giveaway: AnyUrl

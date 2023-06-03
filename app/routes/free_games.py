@@ -9,12 +9,13 @@ free_games_router = APIRouter(prefix="/free_games", tags=["FREE_GAMES"])
 
 
 @free_games_router.get("/all")
-async def all_free_games() -> List[Game]:
+async def all_free_games() -> List[Game] | None:
+
     async with Free_Games_API() as api:
         return await api.get_all_free_games()
 
 
 @free_games_router.get("/giveaway_p")
-async def free_games_by_platform(platform: str) -> List[Game]:
+async def free_games_by_platform(platform: str, type: str) -> List[Game] | None:
     async with Free_Games_API() as api:
-        return await api.get_free_games_by_platform(platform)
+        return await api.get_free_games_by_platforms(platform, type)
