@@ -154,3 +154,4 @@ cython_debug/
 # Database
 GAb_DB.db
 *.db
+*.db
