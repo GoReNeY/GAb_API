@@ -5,7 +5,11 @@ class Settings(BaseSettings):
 
     FREE_GAMES_API_URL: AnyUrl
     FREE_GAMES_API_HOST: str
-    PRICING_COUNTRY: str
+
+    PRICING_CURRENCY: str
+    LANGUAGE: str
+
+    CURRENCY_API: AnyUrl
 
     RapidAPI_Key: SecretStr
 

@@ -11,6 +11,7 @@ python = "^3.11"
 fastapi = "^0.95.1"
 uvicorn = {extras = ["standard"], version = "^0.21.1"}
 aiohttp = "^3.8.4"
+googletrans = "3.1.0a0"
 
 
 [build-system]
