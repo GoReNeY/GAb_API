@@ -13,7 +13,6 @@ class Utils_Router:
     @staticmethod
     @utils_router.post("/translate")
     async def translation(body: Annotated[str, Body()]) -> str | None:
-
         return await translate(body)
 
     @staticmethod

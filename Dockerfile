@@ -1,6 +1,6 @@
 FROM python:3.11.2
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/api
 
 COPY pyproject.toml ./
 
@@ -8,8 +8,9 @@ RUN pip install poetry
 
 RUN poetry config virtualenvs.create false
 
-RUN poetry install
+RUN poetry install --no-root
 
 COPY . .
 
-CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "127.0.0.1", "--port", "8000", "--reload"]
+EXPOSE 8000
+CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

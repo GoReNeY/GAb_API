@@ -112,7 +112,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-.env
+#.env
 .venv
 env/
 venv/
@@ -154,6 +154,3 @@ cython_debug/
 # Database
 GAb_DB.db
 *.db
-*.db
-*.db
-GAb_DB.db
